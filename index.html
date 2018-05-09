@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>simple crystal game</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+  <style type="text/css">
+
+    .crystal-image {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+
+</head>
+<body>
+    <h1 id="Title">Gemology Math</h1>
+
+    <h2 id="directions">Directions</h2>
+
+    <div id="startButton" class="text-center">
+        <button class="btn btn-warning btn-xs start-button">
+            <span class="fa fa-music"></span>Start</button>
+        </div>
+
+  <h1>Number to Guess: <span id="number-to-guess"></span></h1>
+
+  <!-- Note that this div is now empty. We will fill it dynamically -->
+  <div id="crystals">
+  </div>
+
+  <h2>Your Score: <span id="player-score"></span></h2>
+  <h3>Wins: <span id="wins"></span></h3>
+  <h3>Losses: <span id="losses"></span></h3>
+
+  
+</body>
+</html>
