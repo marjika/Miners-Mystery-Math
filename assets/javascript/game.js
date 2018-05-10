@@ -15,6 +15,11 @@ console.log(targetNumber);
 
   var losses = 0;
 
+
+//   $("#number-to-guess, #player-score, #wins, #losses").hide();
+
+  
+
   function crystalRandom() {
       var dozen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
       shuffle(dozen);
@@ -42,7 +47,7 @@ console.log(targetNumber);
 }
 
 function displayCrystal() {
-    $("#number-to-guess").text(targetNumber);
+    // $("#number-to-guess").text(targetNumber);
 
   for (var i = 0; i < numberOptions.length; i++) {
 
@@ -65,6 +70,13 @@ function displayCrystal() {
   }
 }
 
+function displayStats() {
+  $("#targetNumber").text("Number to Guess: " + targetNumber).css("display", "block");
+  $("#player-score").text("Your Total: " + counter).css("display", "block");
+  $("#wins").text("Wins: " + wins).css("display", "block");
+  $("#losses").text("Losses: " + losses).css("display", "block");
+}
+
 function newGame() {
     targetNumber = (Math.floor(Math.random() * (100)) + 20);
     counter = 0;
@@ -73,7 +85,6 @@ function newGame() {
     $("#crystals, #number-to-guess").empty();
     crystalRandom();
     displayCrystal();
-
   }
 
   $("#startButton").on("click", function() {
@@ -81,6 +92,11 @@ function newGame() {
     $(this).hide();
      crystalRandom();
      displayCrystal();
+    //  $("#targetNumber").text("Number to Guess: " + targetNumber);
+     displayStats();
+    //  $("#player-score").text("Your Total: " + counter);
+    //  $("#wins").text("Wins: " + wins);
+    //  $("#losses").text("Losses: " + losses);
 });
 
 
@@ -108,9 +124,11 @@ function newGame() {
       newGame();
     }
 
-    $("#player-score").text(counter);
-    $("#wins").text(wins);
-    $("#losses").text(losses);
+    displayStats();
+
+    // $("#player-score").text(counter);
+    // $("#wins").text(wins);
+    // $("#losses").text(losses);
 
   });
 

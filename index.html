@@ -1,39 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>simple crystal game</title>
+
+  <link rel="shortcut icon" href="assets/images/ruby.png">
+
+  <title>Miner's Mystery Math</title>  
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/javascript/game.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
 
-  <style type="text/css">
 
-    .crystal-image {
-      width: 200px;
-      height: 200px;
-    }
-  </style>
 
 </head>
-<body>
-    <h1 id="Title">Gemology Math</h1>
-
-    <h2 id="directions">Directions</h2>
-
-    <div id="startButton" class="text-center">
-        <button class="btn btn-warning btn-xs start-button">
-            <span class="fa fa-music"></span>Start</button>
-        </div>
-
-  <h1>Number to Guess: <span id="number-to-guess"></span></h1>
-
-  <!-- Note that this div is now empty. We will fill it dynamically -->
-  <div id="crystals">
+<body style="background-image: url(assets/images/cavern2.png); background-size: 100% auto; background-color: skyblue;">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6" style="text-align: center;">
+        <h1 id="Title">Miner's Mystery Math</h1>
+      </div>
+      <div class="col-sm-6">
+       <h6 id="directions">Welcome to the mine!  Press start and you will be given a random number
+          that you will try to match with your crystals.  Clicking on a crystal will add a random amount to your score, 
+          but you won't know how much the crystal is worth until you click on it.  Try to match your score to the target number.
+        If you go over the number, you lose. Each round you play, the value of the random number and the value of the crystals will change.</h6>
+       <h3 id="wins" style="display: none;"></h3>
+       <h3 id="losses" style="display: none;"></h3>
+      </div>
+    </div>
+   <br>
+   <div class="row" style="height:300px;">
+      <div class="col-sm-8"></div>
+      <div class="col-sm-4">
+        <button id="startButton">Start</button>
+      </div>
+   </div>
+   <div class="row">
+    <div class="col-sm-5">
+      <div class="scorecard">
+        <h2 id="targetNumber" style="display: none;"><span id="number-to-guess"></span></h2>
+        <h2 id="player-score" style="display: none;"></h2>
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <div id="crystals"></div>
+    </div>
+  </div>
   </div>
 
-  <h2>Your Score: <span id="player-score"></span></h2>
-  <h3>Wins: <span id="wins"></span></h3>
-  <h3>Losses: <span id="losses"></span></h3>
-
-  
+    
 </body>
 </html>
